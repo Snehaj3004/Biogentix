@@ -1,0 +1,101 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+sqlalchemy==2.0.30
+pymysql==1.1.1
+cryptography==42.0.7
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.9
+python-dotenv==1.0.1
+pydantic[email]==2.7.1
+pydantic-settings==2.2.1
+scikit-learn==1.4.2
+xgboost==2.0.3
+pandas==2.2.2
+numpy==1.26.4
+joblib==1.4.2
+httpx==0.27.0
+alembic==1.13.1
+Pillow==10.3.0
+
+
+''''# Database
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=Admin@123
+DB_NAME=biogentix_db''''
+
+
+# JWT
+SECRET_KEY=biogentix_super_secret_key_change_in_production_2024
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
+
+# App
+APP_NAME=BioQentix
+APP_VERSION=1.0.0
+DEBUG=True
+
+
+#register the user first at http://localhost:8000/docs
+{
+  "full_name": "Dr. Harsh Patel",
+  "email": "harsh@biogentix.com",
+  "phone": "9876543210",
+  "password": "Test@123",
+  "role": "admin",
+  "district": "Pune",
+  "facility_name": "BioQentix HQ"
+}
+
+#login 
+{
+  "email": "harsh@biogentix.com",
+  "password": "Test@123"
+}                                  #getting the token after login and use that token for all the API calls in the header.
+
+#register the patient 
+
+{
+  "full_name": "Ramesh Kumar",
+  "age": 35,
+  "gender": "male",
+  "phone": "9123456789",
+  "address": "Village Nagar, Pune",
+  "district_id": 1,
+  "village": "Nagar",
+  "is_pregnant": false,
+  "weight_kg": 62.5,
+  "height_cm": 168
+}
+
+# submit TB screening form
+{
+  "patient_id": 1,
+  "disease_code": "TB",
+  "symptoms": {
+    "cough_weeks": 3,
+    "night_sweats": true,
+    "weight_loss": true,
+    "fever": true,
+    "blood_in_sputum": false
+  },
+  "vitals": {
+    "temperature": 38.5,
+    "weight_kg": 52
+  },
+  "kit_test_result": "not_done"
+}
+testing done of all the 8 diseases and then you can check the dashboard for the analytics and insights.
+
+
+
+
+
+
+
+#$ source venv/Scripts/activate
+#uvicorn main:app --reload --port 8000
+# for browser :- http://127.0.0.1:8000/docs              backend server start hone ke baad is url pe jao aur 
+#                                                        waha se API test kar sakte ho.
