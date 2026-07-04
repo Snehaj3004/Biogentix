@@ -22,3 +22,24 @@ Thumbs.db
 
 # VS Code
 .vscode/
+
+
+# Database files — never commit
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment secrets
+.env
+*.env
+
+# ML models
+*.pkl
+*.joblib
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
